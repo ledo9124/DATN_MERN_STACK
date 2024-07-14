@@ -6,6 +6,14 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+app.use(express.json());
+
+import categoryRoutes from "./routes/category.route.js";
+import productRoutes from "./routes/product.route.js";
+
+app.use("/api/category", categoryRoutes);
+app.use("/api/product", productRoutes);
+
 app.listen(port, () => {
     connectToMongoDB();
     console.log(`Example app listening on port ${port}`);

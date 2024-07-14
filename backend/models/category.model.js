@@ -11,10 +11,14 @@ const categorySchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true,
+        default: "",
     },
+    status: {
+        type: String,
+        default: 0,
+    }
 });
 
-const Category = mongoose.model("Category" , categorySchema);
+const Category = mongoose.model("Category", categorySchema);
 
 export default Category;
