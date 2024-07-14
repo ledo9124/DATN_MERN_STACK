@@ -10,9 +10,14 @@ app.use(express.json());
 
 import categoryRoutes from "./routes/category.route.js";
 import productRoutes from "./routes/product.route.js";
+import authRoutes from './routes/auth.routes.js';
+import userRoutes from './routes/user.routes.js';
 
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
+
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 app.listen(port, () => {
     connectToMongoDB();
