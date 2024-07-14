@@ -11,15 +11,19 @@ const productSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true,
+        default: "",
     },
     sizes: {
-        type: String,
-        required: true,
+        type: Array,
         default: [],
+    },
+    cateId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+        required: true,
     },
 });
 
-const Product = mongoose.model('Product' , productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;

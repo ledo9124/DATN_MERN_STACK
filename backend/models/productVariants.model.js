@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const productVariantsSchema = new mongoose.Schema({
-    product_id: {
+    productId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
         required: true,
     },
-    size_id: {
-        type: Number,
+    sizeId: {
+        type: String,
         required: true,
     },
     price: {
@@ -24,7 +24,11 @@ const productVariantsSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true,
+        default: "",
+    },
+    status: {
+        type: String,
+        default: 0,
     },
 });
 
